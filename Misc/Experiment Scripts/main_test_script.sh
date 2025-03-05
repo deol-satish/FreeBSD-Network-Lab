@@ -9,15 +9,15 @@ tcp2="dctcp"
 
 # aqm_schemes=("fq_codel" "fq_pie" "l4s")
 aqm_schemes=("l4s" "fq_codel" "fq_pie" )
-aqm_schemes=("fq_pie" "fq_codel" "l4s" )
-aqm_schemes=("fq_codel" "fq_pie" "l4s" )
+# aqm_schemes=("fq_pie" "fq_codel" "l4s" )
+# aqm_schemes=("fq_codel" "fq_pie" "l4s" )
 # aqm_schemes=("l4s")
 
 
 bandwidth=("1Mbps" "10Mbps")
 # bandwidth=("10Mbps")
-delay=("20ms")
-delay=("20ms" "40ms" "10ms")
+delay=("1ms")
+# delay=("20ms" "40ms" "10ms")
 # ecn=("ecn" "noecn")
 ecn=("ecn")
 

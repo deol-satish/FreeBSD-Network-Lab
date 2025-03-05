@@ -9,6 +9,7 @@ tcp2="dctcp"
 
 # AQM schemes
 aqm_schemes=("l4s")
+aqm_schemes=("l4s" "fq_codel" "fq_pie" )
 
 # Bandwidth, delay, and ECN settings
 bandwidth=("8Mbps")
@@ -47,7 +48,7 @@ sshkeypath="$HOME/.ssh/mptcprootkey"
 vmhostaddr="192.168.56.1"
 
 # Number of iterations to run (10 times)
-iterations=10
+iterations=2
 
 # Function to configure TCP CC and ECN on Source
 configure_tcp_cc_ecn() {
@@ -246,7 +247,7 @@ run_test() {
                     configure_tcp_cc_ecn "$e"
                     configure_routers "$aqm" "$bw" "$d" "$e"
                     start_log "$iter" "$aqm" "$bw" "$d" "$e"
-                    server_iperf3_script "$iter"
+                    #server_iperf3_script "$iter"
                     client_iperf3_script "$iter"
                     end_log "$iter" "$aqm" "$bw" "$d" "$e"
                 done
